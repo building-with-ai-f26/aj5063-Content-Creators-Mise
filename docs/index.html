@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mise · Building with AI (Fall 2026)</title>
+  <title>Fernweh · Building with AI (Fall 2026)</title>
 
   <!-- Week 1: create your PostHog account only.
        Build 2: paste your project's current PostHog web snippet here,
@@ -144,8 +144,9 @@
     <!-- HERO / PRODUCT PITCH -->
     <header>
       <span class="eyebrow">NYU Stern · Building with AI · Fall 2026</span>
-      <h1>Mise</h1>
-      <p class="tagline">Mise helps solo Instagram food creators turn rough recipe notes into a ready-to-post Reel script and caption, so they write each recipe once instead of rewriting it for every format.</p>
+      <h1>Fernweh</h1>
+      <p class="meta"><em>German for a longing for faraway places — the opposite of homesickness.</em></p>
+      <p class="tagline">Fernweh is a virtual travel agent for friend groups: it turns everyone's budget, vibe, and preferences into stays, restaurants, and activities, lets each friend swipe to vote, and builds itinerary options and a booking plan the whole group agrees on.</p>
       <div class="cta-row">
         <a class="btn" href="#live-demo" onclick="window.posthog && posthog.capture('clicked_try_product')">See the Product →</a>
         <a class="btn btn-secondary" href="#prd">Read the Living PRD</a>
@@ -158,11 +159,11 @@
       <h2>Product Showcase (Prototype / Live App / 2-Min Video)</h2>
       <p>
         <strong>Current Status:</strong> Build 1: local prototype (terminal script)<br />
-        <strong>Demo:</strong> Pasting rough recipe notes into the prototype and getting back a Reel script and Instagram caption.
+        <strong>Demo:</strong> Entering trip details and friend profiles into the prototype and getting back group-fit restaurant and activity suggestions.
       </p>
-      <img src="mise-prototype.png" alt="Terminal output of the Mise prototype generating a Reel script and Instagram caption from rough recipe notes for a lemon garlic pasta" style="width: 100%; border-radius: 8px; border: 1px solid var(--border);" />
+      <img src="fernweh-prototype.png" alt="Terminal output of the Fernweh prototype suggesting restaurants and activities for a group trip, each labeled unverified with a price level, why it fits the group, and cost per person" style="width: 100%; border-radius: 8px; border: 1px solid var(--border);" />
       <p class="meta">
-        Local prototype — paste rough recipe notes into a terminal script, get back a Reel script and Instagram caption. Add the live cloud app link and two-minute video in Build 5.
+        Local prototype — enter destination, dates, group size, budget, vibe, and a profile per friend; get back 8 restaurants and 8 activities, each with a price level, why it fits the group, and a rough cost per person. Add the live cloud app link and two-minute video in Build 5.
       </p>
     </section>
 
@@ -172,20 +173,21 @@
       <p class="meta">Updated every week as we test with real users and learn what works.</p>
 
       <h3>1. Target User & The Job to Be Done</h3>
-      <p><strong>Who is this for?</strong> A friend who runs an Instagram food account, posting about 3x/week, doing everything herself (cooking, filming, writing, editing). I'll reach her by DM to test this.</p>
-      <p><strong>The painful "Before" workflow</strong> <em>(confirmed with her by DM)</em>: She develops and cooks the recipe, jotting rough notes; films the cooking process; writes a script/voiceover condensing the recipe into a 30–60 second Reel; edits the video and adds on-screen text; writes a separate Instagram caption (hook, condensed ingredients/steps, hashtags); and if she reposts to TikTok or a blog, rewrites everything again in that platform's format. She ends up rewriting the same recipe 3–4 times in different formats and lengths — repetitive, and it eats time she'd rather spend cooking and filming.</p>
-      <p><strong>The "After" workflow with this product:</strong> She cooks the recipe and jots rough notes as before, then pastes those notes into Mise and picks her platforms. Mise returns a ready-to-use package: a 30–60 second video script with a hook, and an Instagram caption with a condensed ingredient list, steps, and hashtags. She reviews and tweaks the wording so it sounds like her, films using the script as her guide, then edits and posts, copying the caption straight from Mise. She writes the recipe once instead of 3–4 times.</p>
+      <p><strong>Who is this for?</strong> Me, as the person who usually organizes group trips with friends. I'll reach testers through our group chat.</p>
+      <p><strong>The painful "Before" workflow:</strong> Someone proposes a trip in the group chat. The organizer researches stays, restaurants, and activities across Airbnb, Google, TikTok, and blogs, then dumps links in the chat, where most get buried or ignored. People reply slowly or vaguely ("I'm down for anything"), so the organizer guesses what people want, builds the plan alone, and chases everyone about money and bookings. One person does all the work, decisions stall, and the final plan rarely reflects what everyone wanted.</p>
+      <p><strong>The "After" workflow with this product:</strong> The organizer enters destination, dates, group size, budget, and vibe, and pastes links to a few Airbnb or VRBO options the group is considering. Each friend opens the trip link and fills out a quick profile — budget comfort, food preferences and restrictions, activity interests, energy level, and dealbreakers — and Fernweh combines everyone's profiles to understand the group. Fernweh suggests restaurants and activities that fit the whole group, so nobody has to research or paste links for those (friends can optionally add a spot they already know about). Everyone swipes right or left on restaurants and activities; stays get a comparison view with key details, links, and cost per person. Fernweh shows group matches, builds 2–3 itinerary options from them (for example, relaxed, packed, and budget-friendly), each with cost per person, the group votes on a final plan, and Fernweh creates a booking plan with what to book and when.</p>
 
       <h3>2. Scope & Explicit Non-Goals</h3>
       <ul>
-        <li><strong>In Scope (Core Workflow):</strong> Paste rough recipe notes → get back a short-form video script and an Instagram caption.</li>
-        <li><strong>Out of Scope #1:</strong> Posting or scheduling directly to Instagram or TikTok — she copies and posts herself.</li>
-        <li><strong>Out of Scope #2:</strong> Editing or generating video — Mise writes the script; she still films and edits.</li>
-        <li><strong>Out of Scope #3:</strong> Accounts, saved recipe libraries, or team features — one person, one recipe at a time.</li>
+        <li><strong>In Scope (Core Workflow):</strong> Trip setup, per-friend profiles via the trip link, AI-suggested restaurant and activity options, group swiping, and a results view with matches.</li>
+        <li><strong>Out of Scope #1:</strong> Booking or paying for anything inside the app.</li>
+        <li><strong>Out of Scope #2:</strong> Direct connections to Airbnb, VRBO, OpenTable, or Resy — stays are added as pasted links.</li>
+        <li><strong>Out of Scope #3:</strong> User accounts and profiles saved across trips — each friend fills out a quick profile per trip through the shared link.</li>
+        <li><strong>Later / Stretch (not core scope now):</strong> Stays comparison with cost per person, 2–3 itinerary options with a group vote, travel-agent features (reservation prep, booking timeline), reusable profiles across trips, destination comparison.</li>
       </ul>
 
       <h3>3. How It Works Under the Hood & Riskiest Assumption (Week 2+)</h3>
-      <p><strong>Riskiest Assumption:</strong> [What is the #1 technical or user risk that could sink this product?]</p>
+      <p><strong>Riskiest Assumption:</strong> That AI can suggest real, relevant places that fit a whole group, and that friends will actually take the time to fill out a profile and vote.</p>
       <p><strong>Simple Architecture:</strong> [User Input] → [Your App / Server] → [AI Model / Tool] → [Output]</p>
 
       <h3>4. Unit Economics & Analytics Snapshot (Updated Weekly)</h3>
@@ -217,10 +219,10 @@
       <div class="log-entry">
         <h3>Build 1 · Intent.md & Throwaway Prototype (Due Nov 9)</h3>
         <ul>
-          <li><strong>What shipped:</strong> A local Python script that calls a free LLM through OpenRouter: paste rough recipe notes in, get back a Reel script and an Instagram caption (see screenshot above, tested with a lemon garlic pasta recipe). Also shipped: PRD v1 filled in (Intent.md and this page), and this product page published on GitHub Pages.</li>
-          <li><strong>Things learned with AI:</strong> Set up a full dev environment as a beginner — Terminal, Git, GitHub CLI login, Node, and Claude Code (including fixing an npm permissions error). Learned to keep API keys in <code>.env</code> and confirm <code>.gitignore</code> protects it. Learned to have the coding agent propose options and interview me instead of inventing answers. On output quality: the caption came out well structured, but the Reel script was one long paragraph with no separate hook line or on-screen text cues.</li>
-          <li><strong>What broke / changed in PRD:</strong> Scope held. The before/after workflow was confirmed with my target user by DM. Next change needed: the script output needs a distinct hook and filming cues, not just a single paragraph.</li>
-          <li><strong>Cost & time this week:</strong> $0.00 (free OpenRouter model) · 2 hours</li>
+          <li><strong>What shipped:</strong> First built Mise (a recipe-to-social-content prototype), then pivoted, with my professor's OK, to Fernweh. Shipped PRD v1 and a terminal prototype that generates group-fit restaurant and activity options from trip details and each friend's profile.</li>
+          <li><strong>Things learned with AI:</strong> Set up my full dev environment as a beginner (Terminal, Git, GitHub CLI, Node, Claude Code, including fixing an npm permissions error). Learned to keep API keys in <code>.env</code> and confirm <code>.gitignore</code> protects it. Learned to have the coding agent propose options and interview me instead of inventing answers.</li>
+          <li><strong>What broke / changed in PRD:</strong> Pivoted after pod feedback and reflection, to build something that solves my own recurring problem. Differentiated from a similar pod project by focusing on group agreement and travel-agent execution rather than personal taste.</li>
+          <li><strong>Cost & time this week:</strong> $0.00 (free OpenRouter model) · 2.5 hours</li>
         </ul>
       </div>
 
